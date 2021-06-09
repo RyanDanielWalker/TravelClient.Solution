@@ -1,4 +1,9 @@
-<h1>All Reviews:</h1>
+<form asp-controller="Reviews" asp-action="Search">
+  <p>
+    Search Reviews: <input type="text" name="searchString" />
+    <input type="submit" value="Filter">
+  </p>
+</form>
 
 <ol>
   @foreach (Review review in Model)
@@ -13,10 +18,3 @@
     <br>
   }
 </ol>
-
-<form asp-controller="Reviews" asp-action="Index">
-  <p>
-    Search Reviews: <input type="text" name="searchString" />
-    <input type="submit" value="Filter">
-  </p>
-</form>

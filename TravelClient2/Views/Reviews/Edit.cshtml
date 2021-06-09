@@ -1,13 +1,13 @@
 <h1>Edit Info:</h1>
 <form action="/Reviews/Details/@(Model.ReviewId)" method="post">
   <label for="city">City Name</label>
-  <input id="city" name="city" type="text" value="@(Model.City)">
+  <input id="city" name="city" type="text" value="@(Model.City)" required="required">
   <label for="country">Country Name</label>
-  <input id="country" name="country" type="text" value="@(Model.Country)">
+  <input id="country" name="country" type="text" value="@(Model.Country)" required="required">
   <label for="rating">Location Rating</label>
-  <input id="rating" name="rating" type="number" value="@(Model.Rating)">
+  <input id="rating" name="rating" type="number" value="@(Model.Rating)" required="required">
   <label for="description">Location Review</label>
-  <input id="description" name="description" type="text" value="@(Model.Description)">
+  <input id="description" name="description" type="text" value="@(Model.Description)" required="required">
   <button type="submit">Update!</button>
 </form>
 
