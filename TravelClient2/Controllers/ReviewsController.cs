@@ -16,13 +16,16 @@ namespace TravelClient2.Controllers
       return View(allReviews);
     }
 
+    public IActionResult Create()
+    {
+      return View();
+    }
     [HttpPost]
-    public IActionResult Index(Review review)
+    public IActionResult Create(Review review)
     {
       Review.Post(review);
       return RedirectToAction("Index");
     }
-
     public IActionResult Details(int id)
     {
       var review = Review.GetDetails(id);
