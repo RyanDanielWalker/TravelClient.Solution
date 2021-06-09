@@ -34,5 +34,19 @@ namespace TravelClient2.Models
 
       return review;
     }
+    public static void Post(Review review)
+    {
+      string jsonReview = JsonConvert.SerializeObject(review);
+      var apiCallTask = ApiHelper.Post(jsonReview);
+    }
+    public static void Put(Review review)
+    {
+      string jsonReview = JsonConvert.SerializeObject(review);
+      var apiCallTask = ApiHelper.Put(review.ReviewId, jsonReview);
+    }
+    public static void Delete(int id)
+    {
+      var apiCallTask = ApiHelper.Delete(id);
+    }
   }
 }
