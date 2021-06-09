@@ -1,4 +1,8 @@
-<h1>All Reviews:</h1>
+@{
+  ViewData["Title"] = "Home Page";
+}
+
+<h1>Feast your eyes on All the Reviews:</h1>
 
 <ol>
   @foreach (Review review in Model)
@@ -6,17 +10,11 @@
     <ul>
       <li>City: @review.City</li>
       <li>Country: @review.Country</li>
+      <li>ID: @review.ReviewId</li>
     </ul>
     <a href="/Reviews/Details/@(review.ReviewId)">
-      <p>Details</p>
+      <p>View Details</p>
     </a>
     <br>
   }
 </ol>
-
-<form asp-controller="Reviews" asp-action="Index">
-  <p>
-    Search Reviews: <input type="text" name="searchString" />
-    <input type="submit" value="Filter">
-  </p>
-</form>

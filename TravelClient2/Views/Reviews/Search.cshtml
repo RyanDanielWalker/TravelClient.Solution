@@ -1,9 +1,14 @@
+<h1>Search Reviews:</h1>
+
 <form asp-controller="Reviews" asp-action="Search">
   <p>
-    Search Reviews: <input type="text" name="searchString" />
-    <input type="submit" value="Filter">
+    Search by City: <input type="text" name="searchString" />
+    <input type="submit" value="Search">
   </p>
 </form>
+
+@* @if (Model.Any())
+  { *@
 
 <ol>
   @foreach (Review review in Model)
@@ -18,3 +23,8 @@
     <br>
   }
 </ol>
+
+@* else
+  {
+  <h3>There are no results</h3>
+  } *@

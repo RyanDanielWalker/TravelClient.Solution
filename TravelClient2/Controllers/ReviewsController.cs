@@ -10,7 +10,12 @@ namespace TravelClient2.Controllers
 {
   public class ReviewsController : Controller
   {
-    public IActionResult Index(string searchString)
+    public IActionResult Index()
+    {
+      var allReviews = Review.GetReviews();
+      return View(allReviews);
+    }
+    public IActionResult Search(string searchString)
     {
       var allReviews = Review.GetReviews();
       var reviews = allReviews.Where(s => s.City == searchString);
